@@ -3,15 +3,33 @@ import java.util.Scanner;
 class ShopItems {
   int totalCount;
 
-  class NonVegan {
+  class Vegan {
+    int smoothieCount;
+    int slushieCount;
+    int totalCount;
+
+    public void increaseCount(int type, int count){
+      if(type == 3) {
+        smoothieCount += count;
+        ShopItem.this.totalCount += count;
+      } else if (type == 4) {
+        slushieCount += count;
+        ShopItems.this.totalCount += count;
+      } else {
+        System.out.println("The type input was incorrect.");
+      }
+    }
+  }
+
+ class NonVegan {
     int iceCreamCount;
     int shakeCount;
     int totalCount;
+    
     public void increaseCount(int type, int count){
       if(type == 1) {
         iceCreamCount += count;
         ShopItems.this.totalCount += count;
-        Shop
       } else if (type == 2){
         shakeCount += count;
         ShopItems.this.totalCount += count;
